@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 原型
+     * 1.构造函数的首字母要大写
+     * 我们不在这个构造函数里写任何代码，当我们在浏览器
+     * 控制台通过
+    */
+
+    // 构造函数
+    function Persion() { }
+    const per = new Persion()
+    console.dir(Persion);
+    console.dir(per);
+    console.log(per instanceof Persion);  //true
+    console.log("--------------------------------");
+
+    function Person() { }
+    Person.prototype.sayHi = "Hi"
+    const person =new Person()  //通过new操作符创建一个实例
+    console.log(person.sayHi);  //Hi
+    console.log(person.__proto__===Person.prototype);  //true
+    console.log('--------------------------------------------------');
+
+
+    // 构造函数
+    function Persion() { }
+    const per1 = new Persion()
+    console.dir(Persion);
+    console.dir(per1);
+    console.log(per1 instanceof Persion); //true
+    console.log("-----------------------------");
+
+    function Person() { }
+    Person.prototype.sayHi = "Hi"
+    const person1 =new Person()
+    console.log(person1.sayHi);//Hi
+    console.log(person1.__proto__===Person.prototype);//true
+    console.log('----------------------------------------------------');
+
+
+
+    // 构造函数
+    function Persion() { }
+    const per2 = new Persion()
+    console.dir(Persion);
+    console.dir(per2);
+    console.log(per2 instanceof Persion);
+    console.log("------------------------");
+
+    function Person() { }
+    Person.prototype.sayHi = "Hi"
+    const person2 =new Person()
+    console.log(person2.sayHi); //Hi
+    console.log(person2.__proto__===Person.prototype); //true
+    console.log('--------------------------------------------');
+
+
+</script>
+
+</html>

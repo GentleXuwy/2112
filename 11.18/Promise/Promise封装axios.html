@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 1.实例化Promise函数
+     * 2.通过 new XMLHttpRequest 实例化连接对象
+     * 3.确定请求方式，以及请求的接口路径
+     * 4.发送请求
+     * 5.绑定事件，处理响应结果 onreadystatechange   readyState
+     * 6. Promise函数调用
+    */
+
+    // Promise封装axios
+    const p = new Promise((resolve, reject) => {
+        // 创建初始化链接
+        const xhr = new XMLHttpRequest()
+        // 确定请求方法和接口
+        xhr.open("GET", "https://api.apiopen.top/getJoke")
+        // 发送
+        xhr.send()
+        // 绑定事件，处理响应结果
+        xhr.onreadystatechange = function () {
+            // 判断
+            if (xhr.readyState === 4) {
+                // 判断响应状态码 200-299都表示成功
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    //  表示成功
+                    resolve(xhr.response)
+                } else {
+                    // 失败
+                    reject(xhr.status)
+                }
+            }
+        }
+    })
+    p.then(res => {
+        console.log(res);
+    }, (err) => {
+        console.log(err);
+    })
+    console.log("----------------------------");
+
+
+    // Promise封装axios
+    const a = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", "https://api.apiopen.top/getJoke")
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response)
+                } else {
+                    reject(xhr.status)
+                }
+            }
+        }
+    })
+    a.then(res => {
+        console.log(res);
+    }, (err) => {
+        console.log(err);
+    })
+    console.log("----------------------------");
+
+
+    // Promise封装axios
+    const q = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open("GET", "https://api.apiopen.top/getJoke")
+        xhr.send()
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    resolve(xhr.response)
+                } else {
+                    reject(xhr.status)
+                }
+            }
+        }
+    })
+    q.then(res => {
+        console.log(res);
+    }, (err) => {
+        console.log(err);
+    })
+
+</script>
+
+</html>
