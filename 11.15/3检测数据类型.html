@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 检测数据类型
+    // 1、typeof
+    let num3 = 123
+    let str3 = "123"
+    let bool = true
+
+    let arr2 = []
+    let obj = {}
+    let fn = function () { }
+    let cla = class { }
+
+    console.log(typeof num3);
+    console.log(typeof str3);
+    console.log(typeof bool);
+    console.log(typeof null);
+    console.log(typeof undefined);
+
+    console.log(typeof arr2);
+    console.log(typeof Array);
+    console.log(typeof obj);
+    console.log(typeof Object);
+    console.log(typeof fn);
+    console.log(typeof cla);
+    console.log(typeof ccccc);
+
+    // 2、instanceof
+    let num4 = 123
+    let str4 = "123"
+    let bool4 = true
+
+    let arr4 = []
+    let obj4 = {}
+    let fn4 = function () { }
+    let cla4 = class { }
+
+    console.log(num4 instanceof Number);
+    console.log(str4 instanceof String);
+    console.log(bool4 instanceof Boolean);
+    console.log(null instanceof Object);
+    console.log(undefined instanceof Object);
+
+    console.log(arr4 instanceof Array);
+    console.log(arr4 instanceof Object);
+    console.log(obj4 instanceof Object);
+    console.log(fn4 instanceof Function);
+    console.log(fn4 instanceof Object);
+    console.log(cla4 instanceof Function);
+    console.log(cla4 instanceof Object);
+
+    // 3、constructor
+    let num5 = 123
+    let str5 = "123"
+    let bool5 = true
+
+    let arr5 = []
+    let obj5 = {}
+    let fn5 = function () { }
+    let cla5 = class { }
+
+    console.log(num5.constructor);
+    console.log(str5.constructor);
+    console.log(bool5.constructor);
+
+    console.log(arr5.constructor);
+    console.log(obj5.constructor);
+    console.log(fn5.constructor);
+    console.log(cla5.constructor);
+
+    function Demo() { }
+    Demo.prototype = Array.prototype
+    let demo = new Demo()
+    console.log(demo.constructor);
+
+    // 4、Object.prototype.toString.call()
+    let num6 = 123
+    let str6 = "123"
+    let bool6 = true
+
+    let arr6 = []
+    let obj6 = {}
+    let fn6 = function () { }
+    let cla6 = class { }
+
+    console.log(Object.prototype.toString.call(num6));
+    console.log(Object.prototype.toString.call(str6));
+    console.log(Object.prototype.toString.call(bool6));
+    console.log(Object.prototype.toString.call(null));
+    console.log(Object.prototype.toString.call(undefined));
+    console.log(Object.prototype.toString.call(arr6));
+    console.log(Object.prototype.toString.call(obj6));
+    console.log(Object.prototype.toString.call(fn6));
+    console.log(Object.prototype.toString.call(cla6));
+
+    // 5.Object.getPrototypeOf()
+    // 获取原型，和想要的原型做对比
+    console.log(Object.getPrototypeOf([]) === Array.prototype); // true
+    console.log(Object.getPrototypeOf({}) === Object.prototype); // true
+</script>
+
+</html>

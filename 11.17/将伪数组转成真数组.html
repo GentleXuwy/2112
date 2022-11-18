@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * 区别：
+     *  1、类数组不具备数组的方法(splice，split，push..)
+     *  2、类数组是一个普通对象，数组类型是Array
+    */
+    // 如何将伪数组转成真数组
+
+    // 方法1、遍历：创建一个空数组，循环遍历伪数组，将遍历出的数据逐一放在空数组中
+
+    // const divs = document.querySelectorAll('div');
+    // let arr = [];
+    // console.log(divs instanceof Array);  // false
+    // for (let i = 0; i < divs.length; i++) {
+    //     arr.push(divs[i]);
+    // }
+    // console.log(arr instanceof Array);  // true
+
+
+
+    // // 方法2、Array.prototype.slice.call()
+    // const divs = document.querySelectorAll('div');
+    // console.log(divs instanceof Array); // false
+    // const arr = Array.prototype.slice.call(divs);
+    // console.log(arr instanceof Array);  // true
+    // //  ??? slice方法为什么可以实现转换 就需要知道数组的slice方法内部实现原理 ???
+
+    // // 下面代码为简单模拟的slice方法：
+    // function slice(start, end) {
+    //     const startIndex = start || 0;
+    //     const endIndex = end || this.length;
+    //     let tempArr = [];
+    //     for (let i = startIndex; i < endIndex; i++) {
+    //         tempArr.push(this[i]);
+    //     }
+    //     return tempArr;
+    // }
+    /**
+     * 方法中的this就是能实现伪数组转换成真数组的关键，通过call()方法将this绑定到伪数组对象上，
+     *  再通过循环将伪数组的每一项push进一个真数组再返回这个真数组。
+    */
+
+
+    // // 方法3、ES6的 Array.form()-- - 有兼容性问题。
+    const divs = document.querySelectorAll('div');
+    console.log(divs instanceof Array);  // false
+    const arr = Array.from(divs);
+    console.log(arr instanceof Array);  // true
+
+</script>
+
+</html>

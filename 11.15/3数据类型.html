@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 基本数据类型的  数据类型转换
+    // 1.使用number 字符串必须是纯数字
+    let str = "20"
+    let num = Number(str)
+    console.log(num);
+    // 2.使用parseInt 取整
+    let str1 = "10.2"
+    let num1 = parseInt(str1)
+    console.log(num1);
+    // 3.parseFloat  浮点数，取小数点数字部门
+    let str2 = "23.66上午好"
+    let num2 = parseFloat(str2)
+    console.log(num2);
+
+    console.log('---------------------');
+
+    // number转换
+    console.log(Number(''));
+    console.log(Number('10'));
+    console.log(Number('10px'));
+    console.log(Number(true));
+    console.log(Number(false))
+
+    // symbol不能转换为数字
+    // let sym=Symbol(a)
+    // console.log(Number(sym));
+    // Bigint去除'n'
+    // console.log(Number(1n));
+
+    // 数组转number
+    let arr = [10, 1]
+    console.log(Number(arr));
+
+    console.log('-------------------');
+
+    // String
+    console.log(String(1));
+    console.log(String(NaN));
+    console.log(String(null));
+    console.log(String(undefined));
+    console.log(String(Symbol));
+    console.log(String({}));
+
+    console.log(10 + '10');
+    console.log(10 + new Date());
+    console.log(10 + [10]);
+
+
+
+    console.log('------------------');
+    var i = 1;
+    console.log(i); //1
+
+    var a = i++;
+    console.log(i); //2
+    console.log(a);  //1
+
+    var e = 1;
+    console.log(e);  //1
+
+    var b = ++e
+    console.log(e); //2
+    console.log(b);  //2
+
+    console.log("------------------------------");
+
+
+</script>
+
+</html>

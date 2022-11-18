@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // function getName(){
+    //     console.log(this.name);
+    // }
+    // let getName2=()=>{
+    //     console.log(this.name);
+    // }
+
+    // window.name='谷'
+    // const school={
+    //     name:'ATQUIGU'
+    // }
+    // getName.call(school)
+    // getName2.call(school)
+    // console.log('-----------------------');
+
+
+    // function getName(){
+    //     console.log(this.name);
+    // }
+    // let getName2=()=>{
+    //     console.log(this.name);
+    // }
+
+    // window.name='谷'
+    // const school={
+    //     name:'ATQUIGU'
+    // }
+    // getName.call(school)
+    // getName2.call(school)
+    // console.log('-----------------------');
+
+    function getName() {
+        console.log(this.name);
+    }
+    let getName2 = () => {
+        console.log(this.name);
+    }
+
+    window.name = '谷'
+    const school = {
+        name: 'ATQUIGU'
+    }
+    getName.call(school)
+    getName2.call(school)
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 通过Person构造函数创建一个实例
+    function Person() { }
+    const person = new Person()
+    console.log(person instanceof Person) // true
+
+
+    // 在原型上定义的方法和属性，在实例上都能继承
+    function Person() {}
+    Person.prototype.sayHi = '你好'
+    const person1 = new Person()
+    console.log(person1.sayHi)   // 你好
+    console.log(person1.__proto__ === Person.prototype) // true
+    // 原型对象Person.prototype访问原来的构造函数就可以通过constructor属性
+    console.log(Person.prototype.constructor === Person) // true
+
+
+
+    // 创建的对象都是Object的实例，他们都会继承Object原型对象上的属性和方法，并且创建的对象.__proto__ === Object.prototype
+    const obj = {}
+    console.log(obj.__proto__ === Object.prototype) // true
+    console.log(obj.toString)  // ƒ toString() { [native code] }，toString是继承Object.prototype上的方法
+
+    const obj2 = new Object()
+    console.log(obj2.__proto__ === Object.prototype) // true
+    console.log(obj2.toString) // ƒ toString() { [native code] }
+</script>
+
+</html>
