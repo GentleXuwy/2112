@@ -15,7 +15,7 @@
 
       <el-main>
         <!-- 富文本 -->
-        <quill-editor class="quills" v-model="richtext" ref="myQuillEditor">
+        <quill-editor class="rich" v-model="richtext" ref="myQuillEditor">
         </quill-editor>
      
         <div class="submit"><el-button type="primary">提交</el-button></div>
@@ -59,7 +59,7 @@ export default {
     font-size: 30px;
   }
 }
-.quills {
+.rich {
   height: 280px;
 }
 .el-main {

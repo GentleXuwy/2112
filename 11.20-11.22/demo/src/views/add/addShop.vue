@@ -151,7 +151,7 @@
             </el-table-column>
           </el-table>
           <el-form-item>
-            <el-button type="primary" class="ab" @click="submitForm('ruleForm')"
+            <el-button type="primary" class="submit" @click="submitForm('ruleForm')"
               >立即创建</el-button
             >
           </el-form-item>
@@ -297,7 +297,7 @@ export default {
 .a {
   margin-right: 180px;
 }
-.ab {
+.submit {
   margin-left: 150px;
   margin-top: 5px;
 }

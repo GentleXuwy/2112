@@ -16,11 +16,11 @@
 
       <!-- 选择食品种类 -->
       <el-main class="demo-ruleForm">
-        <div class="centers">选择食品种类</div>
+        <div class="goods">选择食品种类</div>
         <!-- 表单 -->
         <el-form ref="form" :model="form" label-width="80px">
           <el-form-item label="食品种类" style="margin-top: 20px">
-            <el-select v-model="form.type" placeholder="请选择" class="top-type">
+            <el-select v-model="form.type" placeholder="请选择" class="food">
               <el-option label="123" value=""></el-option>
               <el-option label="456" value=""></el-option>
               <el-option label="牛马" value=""></el-option>
@@ -43,16 +43,16 @@
         </el-form>
 
         <!-- 添加食品 -->
-        <div class="centers">添加食品</div>
+        <div class="goods">添加食品</div>
         <!-- 表单 -->
         <el-form ref="form1" :model="form1" label-width="80px" :rules="rules">
-          <el-form-item label="食品名称" prop="name" class="boxs1">
+          <el-form-item label="食品名称" prop="name" class="goods-con">
             <el-input v-model="form1.name"></el-input>
           </el-form-item>
-          <el-form-item label="食品活动" class="boxs1">
+          <el-form-item label="食品活动" class="goods-con">
             <el-input v-model="form1.activity"></el-input>
           </el-form-item>
-          <el-form-item label="食品详情" class="boxs1">
+          <el-form-item label="食品详情" class="goods-con">
             <el-input v-model="form1.test"></el-input>
           </el-form-item>
           <!-- 图片 -->
@@ -71,7 +71,7 @@
           </el-form-item>
           <!-- 食品特点 -->
           <el-form-item label="食品特点" style="margin-top: 20px">
-            <el-select v-model="form1.type" placeholder="请选择" class="top-type1">
+            <el-select v-model="form1.type" placeholder="请选择" class="char">
               <el-option label="新品" value="shanghai"></el-option>
               <el-option label="招牌" value="beijing"></el-option>
             </el-select>
@@ -91,7 +91,7 @@
             <el-input-number v-model="form1.num1" controls-position="right" :min="1" :max="100"></el-input-number>
           </el-form-item>
 
-          <el-button type="primary" @click="dialogVisible2 = true" class="guige" v-if="this.form1.Specifications == '多规格'">添加规格</el-button>
+          <el-button type="primary" @click="dialogVisible2 = true" class="spec" v-if="this.form1.Specifications == '多规格'">添加规格</el-button>
 
           <el-table :data="tableData" stripe style="width: 100%" v-if="this.form1.Specifications == '多规格'">
             <el-table-column prop="name" label="规格" width="180">
@@ -261,7 +261,7 @@ export default {
     font-size: 30px;
   }
 }
-.centers {
+.goods {
   margin-left: 400px;
   margin-top: 20px;
 }
@@ -273,19 +273,19 @@ export default {
 .el-collape {
   margin-top: 20px;
 }
-.top-type {
+.food {
   width: 590px;
 }
-.top-type1 {
+.char {
   width: 200px;
 }
-.boxs1 {
+.goods-con {
   margin-top: 20px;
 }
 .wrap {
   width: 400px;
 }
-.guige {
+.spec {
   margin-left: 300px;
 }
 </style>
