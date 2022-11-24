@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * async 快速创建一个异步函数
+     * 特点：
+     *    1.await不能单独使用,必须是在async定义的函数内部使用
+     *    2.获取错误信息，需要使用try{}catch{}来进行获取
+     *      try 内部写代码块，catch获取错误
+     *     2.1. catch捕捉到的是最后一个错误信息
+     *
+    */
+
+
+    
+
+    // 初体验
+    // function timeout() {
+    //     return "hello"
+    // }
+    // async function a() {
+    //     let res = await timeout()
+    //     console.log(res);
+    // }
+    // a()
+
+
+    // // 定义多个参数
+    // function fn1() {
+    //     return 10
+    // }
+    // function fn2(num) {
+    //     return num + 10
+    // }
+    // function fn3(num) {
+    //     return num + 10
+    // }
+    // function fn4(num) {
+    //     return num + 10
+    // }
+    // function fn5(num) {
+    //     return num + 10
+    // }
+    // function fn6(num) {
+    //     return num + 10
+    // }
+
+    // async function fn6() {
+    //     let res = await fn1()
+    //     res = await fn2(res)
+    //     res = await fn3(res)
+    //     res = await fn4(res)
+    //     res = await fn5(res)
+    //     console.log(res);
+    // }
+    // fn6()
+    // console.log('------------------------------');
+
+
+    // 初体验
+    // function timeout() {
+    //     return "你好"
+    // }
+    // async function a() {
+    //     let res = await timeout()
+    //     console.log(res);
+    // }
+    // a()
+
+
+    // // 定义多个参数
+    // function fn1() {
+    //     return 10
+    // }
+    // function fn2(num) {
+    //     return num + 10
+    // }
+    // function fn3(num) {
+    //     return num + 10
+    // }
+    // function fn4(num) {
+    //     return num + 10
+    // }
+    // function fn5(num) {
+    //     return num + 10
+    // }
+    // function fn6(num) {
+    //     return num + 10
+    // }
+    // async function fn6() {
+    //     let res = await fn1()
+    //     res = await fn2(res)
+    //     res = await fn3(res)
+    //     res = await fn4(res)
+    //     res = await fn5(res)
+    //     console.log(res);
+    // }
+    // fn6()
+    console.log('------------------------------');
+
+
+    function timeout() {
+        return "123"
+    }
+    async function a() {
+        let res = await timeout()
+        console.log(res);
+    }
+    a()
+
+    // 定义多个参数
+    function fn1() {
+        return 10
+    }
+    function fn2(num) {
+        return num + 10
+    }
+    function fn3(num) {
+        return num + 10
+    }
+    function fn4(num) {
+        return num + 10
+    }
+    function fn5(num) {
+        return num + 10
+    }
+    function fn6(num) {
+        return num + 10
+    }
+    async function fn6() {
+        let res = await fn1()
+        res = await fn2(res)
+        res = await fn3(res)
+        res = await fn4(res)
+        res = await fn5(res)
+        console.log(res);
+    }
+    fn6()
+
+</script>
+
+</html>

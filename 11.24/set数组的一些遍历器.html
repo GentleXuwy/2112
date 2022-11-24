@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     *  set数组的遍历器
+     *`Set.prototype.keys()`：返回键名的遍历器
+     *`Set.prototype.values()`：返回键值的遍历器
+     *`Set.prototype.entries()`：返回键值对的遍历器
+     *`Set.prototype.forEach()`：使用回调函数遍历每个成员
+    */
+
+
+    /**
+     * keys、values方法
+     * 这两个方法我们可以放在一起来实现，因为通过ES6对Object的扩展可以轻松实现对应的方法，下面看一下具体实现
+     * 和ES6中的Set有点区别，因为Object的这几个方法都是按照数值大小，从小到大遍历的数组
+    */
+    // keys()方法
+    this.keys = function () {
+        // 返回遍历集合的所有键名的数组
+        return Object.keys(items);
+    };
+    // values()方法
+    this.values = function () {
+        // 返回遍历集合的所有键值的数组
+        return Object.values(items);
+    };
+
+    // 使用
+    let set = new Set();
+    set.add(1);
+    set.add(3);
+    set.add(2);
+    console.log(set.keys());    // [ 1, 3, 2 ]
+    console.log(set.values());  // [ 1, 3, 2 ]
+
+    /**
+     * forEach方法
+     * ES6中Set结构的实例上带的forEach方法，其实和数组的forEach方法很相似，
+     * 只不过Set结构的键名就是键值，所以第一个参数与第二个参数的值永远都是一样的
+    */
+
+    // forEach(fn, context)方法
+    this.forEach = function (fn, context = this) {
+        for (let i = 0; i < this.size; i++) {
+            let item = Object.keys(items)[i];
+            fn.call(context, item, item, items);
+        }
+    };
+
+    // 使用
+    let set1 = new Set();
+    set1.add(1);
+    set1.add(4);
+    set1.add('3');
+    set1.forEach((value, key) => console.log(key + ' : ' + value));  // 1:1, 3:3, 4:4
+    let arr = set1.values();     // [ 1, 3, 4 ]
+    // arr = new Set(arr.map(x => x * 2)).values();
+
+
+    // entries方法
+    const map = new Map([['a', 1], ['b', 2]])
+    for (let item of map.entries()) {
+        console.log(item)  // ['a', 1]    ['b', 2]
+    }
+   
+
+
+
+
+</script>
+
+</html>

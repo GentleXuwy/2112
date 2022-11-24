@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /**
+     * set数组
+     * 概念：新建一个数组，且保证数组中的每一个值都是唯一的
+     * 语法： let a=new Set()
+     * 方法：
+     *    获取元素的个数：array.size()
+     *    添加元素：array.add()
+     *    删除元素：array.delete()
+     *    检测是否存在这个值：array.has()
+     *    清空：array.clear()
+     *  `Set.prototype.keys()`：返回键名的遍历器
+     *  `Set.prototype.values()`：返回键值的遍历器
+     *  `Set.prototype.entries()`：返回键值对的遍历器
+     *  `Set.prototype.forEach()`：使用回调函数遍历每个成员
+     *  
+     * 
+    */
+
+
+
+    // 新建一个set数组
+    let set = new Set()
+    console.log(set);
+    // 添加元素，只能单独进行添加
+    set.add('张三')
+    set.add('李四')
+    set.add('王五')
+    set.add('赵六')
+    console.log(set);
+    // 删除元素，根据内容来进行删除元素
+    set.delete('李四')
+    console.log(set);
+    // 检测是否存在这个值
+    console.log(set.has('王五'));
+    // 遍历循环
+    for (let key of set) {
+        console.log(key);
+    }
+    // 获取长度
+    console.log(set.size);
+    // 去重
+    let array = [1, 5, 6, 2, 2, 9, 5, 6, 5, 1, 2, 5,]
+    let result = new Set(array)
+    // 将set数组变成数组
+    // 方法：扩展运算符、循环遍历、Array.from()
+
+    // 扩展：
+    // 将对个值变成数组的方法
+    Array.of()
+    let aa = [...result]
+    console.log(aa);
+
+    let bb = Array.from(result)
+    console.log(bb);
+
+    let cc = Array.of(1, 1, 2, 6, 6, 5, 3, 2, 6, 8)
+    console.log(cc);
+    console.log('----------------------------------------');
+
+
+
+
+    // 建一个set数组
+    let set1 = new Set()
+    console.log(set1);
+    // 添加元素
+    set1.add('小明')
+    set1.add('小花')
+    set1.add('小黑')
+    set1.add('小红')
+    console.log(set1);
+    // 删除元素
+    set1.delete('小黑')
+    console.log(set1);
+    // 检测是否有这个值
+    console.log(set1.has('小明'));
+    // 循环
+    for (let key of set1) {
+        console.log(key);
+    }
+    // 获取长度
+    console.log(set1.size);
+    // 去重
+    let array1 = [5, 6, 2, 0, 3, 9, 0, 1, 5, 2, 6, 5, 3]
+    let result1 = new Set(array1)
+    // 将set数组变成数组
+    // 方法：扩展运算符、循环遍历、Array.from()
+
+    // 扩展： 将对个值变成数组的方法
+    Array.of()
+    let q = [...result1]
+    console.log(q);
+
+    let s = Array.from(result1)
+    console.log(s);
+
+    let d = Array.of(3, 0, 1, 5, 3, 6, 0, 0, 3, 5, 1)
+    console.log(d);
+    console.log('----------------------------------------');
+
+
+
+    // 建一个set数组
+    let set2 = new Set()
+    console.log(set2);
+    // 添加元素
+    set2.add('12')
+    set2.add('13')
+    set2.add('14')
+    set2.add('15')
+    console.log(set2);
+    // 删除元素
+    set2.delete('13')
+    console.log(set2);
+    // 检测是否有这个值
+    console.log(set2.has('15'));
+    // 循环
+    for (let key of set2) {
+        console.log(key);
+    }
+    // 获取长度
+    console.log(set2.size);
+    // 去重
+    let arr = [1, 1, 5, 6, 8, 6, 9, 8, 0]
+    let resl = new Set(arr)
+    // 将set数组变成数组
+    // 方法：
+    //    扩展运算符、循环遍历、Array.from()
+
+    // 扩展:将对个值变成数组的方法
+    Array.of()
+    let w = [...resl]
+    console.log(w);
+
+    let z = Array.from(resl)
+    console.log(z);
+
+    let p = Array.of(2, 2, 0, 5, 6, 0, 4, 6)
+    console.log(p);
+
+
+</script>
+
+</html>

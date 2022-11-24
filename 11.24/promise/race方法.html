@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 有rejected状态时
+    const p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(111)
+        }, 3000)
+    })
+
+    const p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(222)
+        }, 5000)
+    })
+
+    const p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(333)
+        }, 10000)
+    })
+
+    // race: 竞技/竞赛
+    // 只要有一个Promise变成fulfilled状态，那么就结束
+    Promise.race([p1, p2, p3])   //必须是个数组
+        .then((res) => {
+            console.log('res:', res);
+        }).catch((err) => {
+            console.log('err:', err);
+        })
+    console.log('-------------------');
+
+
+
+    // 有rejected状态时
+    const p4=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(11)
+        },3000)
+    })
+    const p5=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(22)
+        },5000)
+    })
+    const p6=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(33)
+        },10000)
+    })
+    // race: 竞技/竞赛
+    Promise.race([p4,p5,p6])
+    .then((res)=>{
+        console.log('res:',res);
+    }).catch((err)=>{
+        console.log('err:',err);
+    })
+    console.log('-------------------------');
+
+
+      // 有rejected状态时
+      const p7=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(77)
+        },3000)
+    })
+    const p8=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(88)
+        },5000)
+    })
+    const p9=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(99)
+        },10000)
+    })
+    // race: 竞技/竞赛
+    Promise.race([p7,p8,p9])
+    .then((res)=>{
+        console.log('res:',res);
+    }).catch((err)=>{
+        console.log('err:',err);
+    })
+</script>
+
+</html>
