@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // get 和 set
+    class Phone {
+        get price() {
+            console.log('价格属性被读取');  //价格属性被读取
+            return '111'
+        }
+        set price(newVal) {
+            console.log('价格属性被修改');  //价格属性被修改
+        }
+    }
+
+    // 实例化对象
+    let a = new Phone()
+    console.log(a.price);   //111
+    a.price = 'free'
+    console.log('----------------------------');
+
+
+    // get 和 set
+    class Phone1 {
+        get price() {
+            console.log('价格属性被读取');
+            return '22'
+        }
+        set price(newVal) {
+            console.log('价格属性被修改');
+        }
+    }
+
+    // 实例化对象
+    let res = new Phone1()
+    console.log(res.price);   //22
+    res.price = 'free'
+    console.log('--------------------------------');
+
+
+    // get 和 set
+    class Phone2 {
+        get price() {
+            console.log('价格属性被读取了');
+            return '123'
+        }
+        set price(newVal) {
+            console.log('价格属性被修改了');
+        }
+    }
+
+    // 实例化对象
+    let cc = new Phone2()
+    console.log(cc.price);   //123
+    cc.price = 'free'
+
+</script>
+
+</html>

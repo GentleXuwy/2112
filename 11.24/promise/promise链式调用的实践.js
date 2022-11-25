@@ -1,7 +1,8 @@
 /**
 * 链式调用:
 * 语法结构: promise().then().then().then().catch()
-* 特点：在上一个then里面，return 一个返回值，在下一个then里面可以获取到返回的值
+* 特点：
+* 在上一个then里面，return 一个返回值，在下一个then里面可以获取到返回的值
 * 可以一直then下去，每个then不会相互阻碍
 * 在其中一个then里面return 一个值，下一个then是可以获取到当前值的
 **/

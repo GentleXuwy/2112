@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const proto = {
+        foo: '你好'
+    }
+    const obj = {
+        foo: '你好',
+        find() {
+            return super.foo
+        }
+    }
+
+    Object.setPrototypeOf(obj, proto)
+    console.log(obj.find()); //你好
+    obj.find()
+    console.log('--------------------------');
+
+
+
+    const proto1 = {
+        foo: '红色'
+    }
+    const obj1 = {
+        foo: '红色',
+        find() {
+            return super.foo
+        }
+    }
+
+    Object.setPrototypeOf(obj1, proto1)
+    console.log(obj1.find()); //你好
+    obj1.find()
+    console.log('----------------------');
+
+
+
+    const proto2 = {
+        foo: '绿色的'
+    }
+    const obj2 = {
+        foo: '绿色的',
+        find() {
+            return super.foo
+        }
+    }
+
+    Object.setPrototypeOf(obj2, proto2)
+    console.log(obj2.find()); //你好
+    obj2.find()
+
+</script>
+
+</html>
