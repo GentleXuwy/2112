@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .basic {
+            width: 300px;
+            height: 100px;
+            border: 1px solid #666;
+        }
+
+        .happy {
+            border: 3px solid red;
+            background-color: deepskyblue;
+            background: linear-gradient(30deg, pink, orange);
+        }
+
+        .sad {
+            border: 3px dashed rgb(2, 166, 2);
+            background-color: gray;
+        }
+
+        .normal {
+            background-color: dodgerblue;
+        }
+
+        .atguigu1 {
+            background-color: yellowgreen;
+        }
+
+        .atguigu2 {
+            font-size: 30px;
+            text-shadow: 2px 2px 10px rgb(247, 11, 86);
+        }
+
+        .atguigu3 {
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+       绑定样式：
+         1.class样式
+             写法：class="xxx" xxx可以是字符串、对象、数组。
+               字符串写法适用于：样式的类名不确定，需要动态获取
+               对象写法适用于：要绑定多个样式，个数确定，名字也确定，但是不确定用不用；也可以适用于三元表达式
+               数组写法适用于：要绑定多个样式，个数不确定，名字也不确定
+
+         2.style样式：
+             :style="{fontSize: '30px'}"其中xxx是动态值。
+             :style="{a,b}" 其中a,b是样式对象。
+            
+     -->
+
+    <!-- 准备一个容器 -->
+    <div id="root">
+        <!-- 绑定class样式---字符串写法，适用于：样式的类名不确定，需要动态指定 -->
+        <div class="basic" :class="mood" @click="changeMood">{{name}}</div><br />
+        <!-- 绑定class样式---数组写法，适用于：要绑定的样式个数不确定、名字也不确定 -->
+        <div class="basic" :class="classArr">{{name1}}</div><br />
+        <!-- 绑定class样式---对象写法，适用于：要绑定的样式个数确定，名字也确定，但要动态决定用不用 -->
+        <div class="basic" :class="{atguigu1:true,atguigu2:true}">{{name}}</div><br />
+
+
+        <!-- 绑定style样式---对象写法 -->
+        <div class="basic" :style="styleObj">{{name2}}</div><br />
+        <!-- 绑定style样式---数组写法 -->
+        <div class="basic" :style="styleArr">{{name3}}</div>
+
+    </div>
+</body>
+<script>
+    // const vm = new Vue({
+    //     data() {
+    //         return {
+    //             name: '基础盒子',
+    //             name1: '数组的样式绑定',
+    //             name2: 'style对象的样式绑定',
+    //             name3: 'style数组的样式绑定',
+    //             mood: 'normal',
+    //             classArr: ['atguigu1', 'atguigu2', 'atguigu3'],
+    //             classObj: {
+    //                 atguigu1: true,
+    //                 atguigu2: false
+    //             },
+    //             styleObj: {
+    //                 fontSize: '30px',
+    //                 color: 'red',
+    //                 borderRadius:'10px',
+    //                 backgroundColor:'pink'
+    //             },
+    //             styleObj1: {
+    //                 backgroundColor: 'pink'
+    //             },
+    //             styleArr:[
+    //                 {
+    //                     fontSize: '30px',
+    //                     color: 'green',
+    //                 },
+    //                 {
+    //                     backgroundColor: 'dodgerblue'
+    //                 }
+    //             ]
+    //         }
+    //     },
+    //     methods: {
+    //         changeMood() {
+    //             const arr = ['happy', 'sad', 'normal']
+    //         }
+    //     },
+    // })
+   
+
+    
+
+    // const vm = new Vue({
+    //     data() {
+    //         return {
+    //             name: '基础盒子',
+    //             name1: '数组的样式绑定',
+    //             name2: 'style对象的样式绑定',
+    //             name3: 'style数组的样式绑定',
+    //             mood: 'normal',
+    //             classArr: ['atguigu1', 'atguigu2', 'atguigu3'],
+    //             classObj: {
+    //                 atguigu1: true,
+    //                 atguigu2: false
+    //             },
+    //             styleObj: {
+    //                 fontSize: '30px',
+    //                 color: 'pink',
+    //                 borderRadius:'10px',
+    //                 backgroundColor:'red'
+    //             },
+    //             styleObj1: {
+    //                 backgroundColor: 'pink'
+    //             },
+    //             styleArr:[
+    //                 {
+    //                     fontSize: '30px',
+    //                     color: 'green',
+    //                 },
+    //                 {
+    //                     backgroundColor: 'dodgerblue'
+    //                 }
+    //             ]
+    //         }
+    //     },
+    //     methods: {
+    //         changeMood() {
+    //             const arr = ['happy', 'sad', 'normal']
+    //         }
+    //     },
+    // })
+   
+
+
+    const vm = new Vue({
+        data() {
+            return {
+                name: '基础盒子',
+                name1: '数组的样式绑定',
+                name2: 'style对象的样式绑定',
+                name3: 'style数组的样式绑定',
+                mood: 'normal',
+                classArr: ['atguigu1', 'atguigu2', 'atguigu3'],
+                classObj: {
+                    atguigu1: true,
+                    atguigu2: false
+                },
+                styleObj: {
+                    fontSize: '30px',
+                    color: 'pink',
+                    borderRadius:'10px',
+                    backgroundColor:'red'
+                },
+                styleObj1: {
+                    backgroundColor: 'azure'
+                },
+                styleArr:[
+                    {
+                        fontSize: '30px',
+                        color: 'yellow',
+                    },
+                    {
+                        backgroundColor: 'dodgerblue'
+                    }
+                ]
+            }
+        },
+        methods: {
+            changeMood() {
+                const arr = ['happy', 'sad', 'normal']
+            }
+        },
+    })
+   
+   
+   
+   
+   vm.$mount('#root')
+</script>
+
+</html>

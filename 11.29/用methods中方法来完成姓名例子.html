@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 准备一个容器 -->
+    <div id="root">
+        <div>姓：<input v-model:value="firstName" type="text"></div>
+        <div>名：<input v-model="lastName" type="text"></div>
+        <div>全名：<input v-model="fullName" @input="changeInput" type="text"></div>
+        <div>{{handleFullName()}}</div>
+    </div>
+
+</body>
+<script>
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         firstName: '张',
+    //         lastName: '三',
+    //         fullName: ''
+    //     },
+    //     methods: {
+    //         handleFullName() {
+    //             console.log('我是函数调用');
+    //             this.fullName = this.firstName+'-'+this.lastName
+    //             return this.firstName+'-'+this.lastName
+    //         },
+    //         changeInput() {
+    //             let result = this.fullName.split('-')
+    //             this.firstName = result[0]
+    //             this.lastName = result[1]
+    //         }
+    //     },
+
+    // })
+
+
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         firstName: '小',
+    //         lastName: '明',
+    //         fullName: ''
+    //     },
+    //     methods: {
+    //         handleFullName() {
+    //             console.log('我是函数调用的');
+    //             this.fullName = this.firstName+'-'+this.lastName
+    //             return this.firstName+'-'+this.lastName
+    //         },
+    //         changeInput() {
+    //             let result = this.fullName.split('-')
+    //             this.firstName = result[0]
+    //             this.lastName = result[1]
+    //         }
+    //     },
+
+    // })
+
+
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: '老',
+            lastName: '六',
+            fullName: ''
+        },
+        methods: {
+            handleFullName() {
+                console.log('我是函数调用的');
+                this.fullName = this.firstName+'-'+this.lastName
+                return this.firstName+'-'+this.lastName
+            },
+            changeInput() {
+                let result = this.fullName.split('-')
+                this.firstName = result[0]
+                this.lastName = result[1]
+            }
+        },
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<!-- 
+    v-for指令：
+       1.用于展示列表数据
+       2.语法： v-for="(item,index) in xxx" :key="aaa"
+       3.可遍历：数组、对象、字符串(用的很少)，指定次数(用的很少)
+ -->
+<body>
+    <div id="add">
+        <!-- 遍历数组 -->
+        <ul>
+            <li v-for="(item,i) of persons" :key="i">
+                {{item.name}}-{{item.age}}
+                <input type="text">
+            </li>
+        </ul>
+        <!-- 遍历对象 -->
+        <ul>
+            <li v-for="(item, i) of car" :key="i">
+                {{i}}-{{item}}
+            </li>
+        </ul>
+        <!-- 遍历字符串 -->
+        <ul>
+            <li v-for="(item, i) of str" :key="i">
+                {{i}}-{{item}}
+            </li>
+        </ul>
+        <!-- 遍历指定次数 5是遍历五次 -->
+        <ul>
+            <li v-for="(item, i) of 5" :key="i">
+                {{i}}-{{item}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el: '#add',
+    //     data: {
+    //         persons: [
+    //             { id: '1', name: '张三', age: 18 },
+    //             { id: '2', name: '李四', age: 18 },
+    //             { id: '3', name: '王五', age: 18 },
+    //         ],
+    //         car:{
+    //             name:'奥迪',
+    //             price:'70万',
+    //             color:'黑色'
+    //         },
+    //         str:'你好'
+    //     },
+    // })
+
+
+    // new Vue({
+    //     el: '#add',
+    //     data: {
+    //         persons: [
+    //             { id: '1', name: '小明', age: 16 },
+    //             { id: '2', name: '小张', age: 18 },
+    //             { id: '3', name: '小粉', age: 21 },
+    //         ],
+    //         car:{
+    //             name:'奥迪',
+    //             price:'68万',
+    //             color:'银色'
+    //         },
+    //         str:'你好'
+    //     },
+    // })
+
+
+
+    new Vue({
+        el: '#add',
+        data: {
+            persons: [
+                { id: '1', name: '小熊', age: 16 },
+                { id: '2', name: '猴子', age: 12 },
+                { id: '3', name: '企鹅', age: 18 },
+            ],
+            car:{
+                name:'奥迪',
+                price:'70万',
+                color:'红色'
+            },
+            str:'你好啊'
+        },
+    })
+</script>
+
+</html>

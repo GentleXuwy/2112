@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        计算属性：
+        1.定义：要用的属性不存在，要通过已有属性计算得来
+        2.原理：底层借助了Object.defineproperty方法提供的getter和setter。
+        3.get函数什么时候执行？
+            ⑴ 初次读取时会执行一次。
+            ⑵ 当依赖的数据发生改变时会被再次调用
+        4.特点：
+            ⑴ 是同步
+            ⑵ 具有缓存性
+            ⑶ 数据和属性来源于data数据中，具有多对一的关系
+        5.优势：与methods实现相比，内部有缓存机制(复用)，效率更高，调试方便。
+        6.备注：
+            ⑴ 计算属性最终会出现在vm上，直接读取使用即可。
+            ⑵ 如果计算属性要被修改，那必须写set函数去响应修改，且set中要引起计算时依赖的数据发生改变。
+     -->
+
+    <!-- 准备一个容器 -->
+    <div id="root">
+        <div>姓：<input v-model:value="firstName" type="text"></div>
+        <div>名：<input v-model="lastName" type="text"></div>
+        <div>全名：<input v-model="fullName" type="text"></div>
+    </div>
+
+</body>
+<script>
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         firstName: '张',
+    //         lastName: '三'
+    //     },
+    //     computed: {
+    //         /**完整写法**/
+    //         // fullName: {
+    //         //     get: function () {
+    //         //         console.log('我是被读取的');
+    //         //         return this.firstName+'-'+this.lastName
+    //         //     },
+    //         //     set: function (val) {
+    //         //         console.log('我是被设置的');
+    //         //         //  使用切割的方法，将字符串分开，并进行赋值
+    //         //         let result=val.split('-')
+    //         //         this.firstName=result[0]   
+    //         //         this.lastName=result[1]   
+    //         //     }
+    //         // },
+    //        /**简写**/
+    //        fullName(){
+    //         console.log('我是被读取的');
+    //         return this.firstName+'-'+this.lastName
+    //        }
+    //     }
+    // })
+
+
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         firstName: '王',
+    //         lastName: '五'
+    //     },
+    //     computed: {
+    //         /**完整写法**/
+    //         // fullName: {
+    //         //     get: function () {
+    //         //         console.log('我是读取的');
+    //         //         return this.firstName+'-'+this.lastName
+    //         //     },
+    //         //     set: function (val) {
+    //         //         console.log('我是设置的');
+    //         //         let result=val.split('-')
+    //         //         this.firstName=result[0]   
+    //         //         this.lastName=result[1]   
+    //         //     }
+    //         // },
+    //        /**简写**/
+    //        fullName(){
+    //         console.log('我是读取的');
+    //         return this.firstName+'-'+this.lastName
+    //        }
+    //     }
+    // })
+
+
+
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: '赵',
+            lastName: '六'
+        },
+        computed: {
+            // 完整写法
+            // fullName: {
+            //     get: function () {
+            //         console.log('我是读取的');
+            //         return this.firstName+'-'+this.lastName
+            //     },
+            //     set: function (val) {
+            //         console.log('我是设置的');
+            //         //  使用切割的方法，将字符串分开，并进行赋值
+            //         let result=val.split('-')
+            //         this.firstName=result[0]   
+            //         this.lastName=result[1]   
+            //     }
+            // },
+        //    简写
+           fullName(){
+            console.log('我是读取');
+            return this.firstName+'-'+this.lastName
+           }
+        }
+    })
+</script>
+
+</html>
