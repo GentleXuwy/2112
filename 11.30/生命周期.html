@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <!-- 
+        生命周期：
+            1.又名：生命周期回调函数、生命周期函数、生命周期钩子。
+            2.是什么：Vue在关键时刻帮我们调用的一些特殊名称的函数。
+            3.生命周期函数的名字不可更改，但函数的具体内容是程序员根据需求编写的。
+            4.生命周期函数中的this指向是vm 或 组件实例对象。
+     -->
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            beforeCreate() {
+                console.log('beforeCreate');
+                // 实例化基础 new 实例化节点
+            },
+            created() {
+                console.log('created');
+                // 配置data 数据模板
+                // 不能获取到dom元素
+                // 能拿到数据
+            },
+            // 挂载前
+            beforeMount() {
+                // 这是虚拟DOM的诞生并且进行对比
+                console.log('beforeMount');
+            },
+            // 挂载后
+            mounted() {
+                // 元素的加载 dom和data都可以获取到
+                console.log('mounted');
+            },
+            beforeUpdate() {
+                console.log('beforeUpdate');
+                // 监听data在什么时候发生了改成，什么地方，路径
+                // 虚拟节点的对比
+            },
+            updated() {
+                console.log('updated');
+                // 更新dom
+            },
+            beforeDestroy() {
+
+            },
+            destroyed() {
+
+            },
+        }
+    })
+</script>
+
+</html>

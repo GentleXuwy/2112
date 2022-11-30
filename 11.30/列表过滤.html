@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>人员列表</h2>
+        <input v-model="searchName" @input="inp" type="text" placeholder="请输入要查找的姓名">
+        <ul>
+            <li v-for="i in flitera" :key="i.id">
+                {{i.name}}-{{i.age}}-{{i.sex}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el: '#app',
+    //     data() {
+    //         return {
+    //             searchName: '',
+    //             list: [
+    //                 { id: '1', name: '王五', age: 18, sex: '男' },
+    //                 { id: '2', name: '赵五', age: 16, sex: '男' },
+    //                 { id: '3', name: '马冬梅', age: 20, sex: '女' },
+    //                 { id: '4', name: '周冬雨', age: 13, sex: '女' },
+    //             ],
+    //             flitera:[]
+    //         }
+    //     },
+    //     created() {
+    //         this.inp()
+    //     },
+    //     methods: {
+    //         inp(){
+    //             this.flitera=this.list.filter(item=>{
+    //                 return item.name.includes(this.searchName)
+    //             })
+    //         }
+    //     },
+    // }).$mount('#app')
+
+
+
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                searchName: '',
+                list: [
+                    { id: '1', name: '王五', age: 15, sex: '男' },
+                    { id: '2', name: '赵五', age: 13, sex: '男' },
+                    { id: '3', name: '马冬梅', age: 22, sex: '女' },
+                    { id: '4', name: '周冬雨', age: 10, sex: '女' },
+                ],
+                flitera:[]
+            }
+        },
+        created() {
+            this.inp()
+        },
+        methods: {
+            inp(){
+                this.flitera=this.list.filter(item=>{
+                    return item.name.includes(this.searchName)
+                })
+            }
+        },
+    }).$mount('#app')
+</script>
+
+</html>

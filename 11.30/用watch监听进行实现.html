@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>人员列表</h2>
+        <input v-model="searchName" @input="inp" type="text" placeholder="请输入名字查找">
+        <ul>
+            <li v-for="item in filterList" :key="item.id">
+                {{item.name}}-{{item.age}}-{{item.sex}}
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // new Vue({
+    //     el: '#app',
+    //     data() {
+    //         return {
+    //             searchName: '',
+    //             list: [
+    //                 { id: '1', name: '马冬梅', age: 18, sex: '女' },
+    //                 { id: '2', name: '周冬雨', age: 13, sex: '女' },
+    //                 { id: '3', name: '周杰伦', age: 16, sex: '男' },
+    //                 { id: '4', name: '温兆伦', age: 20, sex: '男' },
+    //             ],
+    //             filterList:[]
+    //         }
+    //     },
+    //    watch:{
+    //     searchName:{
+    //         // 一进页面就立即监听
+    //         immediate:true,
+    //         handler(newVal,oldVal){
+    //             this.filterList=this.list.filter(item=>item.name.indexOf(newVal)!==-1)
+    //         }
+    //     }
+    //    }
+    // }).$mount('#app')
+
+
+
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                searchName: '',
+                list: [
+                    { id: '1', name: '马冬梅', age: 20, sex: '女' },
+                    { id: '2', name: '周冬雨', age: 16, sex: '女' },
+                    { id: '3', name: '周杰伦', age: 30, sex: '男' },
+                    { id: '4', name: '温兆伦', age: 23, sex: '男' },
+                ],
+                filterList:[]
+            }
+        },
+       watch:{
+        searchName:{
+            // 一进页面就立即监听
+            immediate:true,
+            handler(newVal,oldVal){
+                this.filterList=this.list.filter(item=>item.name.indexOf(newVal)!==-1)
+            }
+        }
+       }
+    }).$mount('#app')
+</script>
+
+</html>

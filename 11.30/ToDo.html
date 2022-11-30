@@ -197,6 +197,7 @@
             background-color: #fe7345;
             color: #fff;
         }
+
     </style>
 </head>
 
@@ -314,7 +315,7 @@
     var clear = document.querySelector('.clear')  //删除选中的
     // ul事件
     ul.onclick = function (e) {
-        // console.log(e);
+        // console.log(e.target);
         // 获取del删除的类名进行删除
         if (e.target.className == "del") {
             e.target.parentNode.remove()
@@ -324,7 +325,8 @@
             // 给foot修改类名，为动画
             foot.className = 'animation'
             foot.style.display = "flex"
-            foot.style.display = "none"
+            foot.style.display="block"
+            // foot.className="foot"
             foots.style.display = "none"
         }
         // 判断类名在选中时的操作
@@ -364,14 +366,14 @@
         }
         // 判断长度为零时类别的显示与隐藏
         if (ul.children.length == 0) {
-            nav.style.display = "none"
+            foots.style.display = "none"
             active.style.display = "none"
             completed.style.display = "none"
             clear.style.display = "none"
             foot.style.display = "block"
             foot.style.display = "flex"
         }
-    }
+    };
 
     // all全部做事件
     all.onclick = function (e) {
