@@ -1,0 +1,17 @@
+# 忽略文件
+
+# 以dist文件夹下的都会忽略
+/dist/*
+#local文件都会忽略
+.local
+# output.js会忽略
+.output.js
+#  **表示在正则中所有匹配的文件都会忽略
+/node_modules/**
+
+# svg图片校验格式会被忽略
+**/*.svg
+**/*.sh
+
+# 在public下面的都会被忽略
+/public/*
