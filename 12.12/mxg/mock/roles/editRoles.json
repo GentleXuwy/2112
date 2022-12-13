@@ -1,0 +1,9 @@
+{
+  "data": {
+    "roleId": 592,
+    "roleName": "12dfgrt",
+    "roleDesc": "哈哈哈哈哈哈",
+    "rolePermissionDesc": null
+  },
+  "meta": { "msg": "获取成功", "status": 200 }
+}
