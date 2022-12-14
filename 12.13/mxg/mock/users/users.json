@@ -1,0 +1,278 @@
+{
+  "data": {
+    "total": 30,
+    "users": [
+      {
+        "id": 500,
+        "role_name": "超级管理员",
+        "username": "admin",
+        "create_time": 1486720211,
+        "mobile": "15154825784",
+        "email": "3432432@163.com",
+        "mg_state": true
+      },
+      {
+        "id": 1332,
+        "role_name": "超级管理员",
+        "username": "user65",
+        "create_time": 1670641754,
+        "mobile": "13909090922",
+        "email": "112豪@qq.com",
+        "mg_state": true
+      },
+      {
+        "id": 1335,
+        "role_name": "超级管理员",
+        "username": "user68",
+        "create_time": 1670641754,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1336,
+        "role_name": "超级管理员",
+        "username": "user69",
+        "create_time": 1670641754,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1337,
+        "role_name": "超级管理员",
+        "username": "user70",
+        "create_time": 1670641755,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1338,
+        "role_name": "超级管理员",
+        "username": "user71",
+        "create_time": 1670641755,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1340,
+        "role_name": "超级管理员",
+        "username": "user73",
+        "create_time": 1670641755,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1341,
+        "role_name": "超级管理员",
+        "username": "user74",
+        "create_time": 1670641755,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1344,
+        "role_name": "超级管理员",
+        "username": "user77",
+        "create_time": 1670641756,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1345,
+        "role_name": "超级管理员",
+        "username": "user78",
+        "create_time": 1670641756,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1346,
+        "role_name": "超级管理员",
+        "username": "user79",
+        "create_time": 1670641756,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1347,
+        "role_name": "超级管理员",
+        "username": "user80",
+        "create_time": 1670641757,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1348,
+        "role_name": "超级管理员",
+        "username": "user81",
+        "create_time": 1670641757,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1349,
+        "role_name": "超级管理员",
+        "username": "user82",
+        "create_time": 1670641757,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1350,
+        "role_name": "超级管理员",
+        "username": "user83",
+        "create_time": 1670641757,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1351,
+        "role_name": "超级管理员",
+        "username": "user84",
+        "create_time": 1670641757,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1352,
+        "role_name": "超级管理员",
+        "username": "user85",
+        "create_time": 1670641758,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1353,
+        "role_name": "超级管理员",
+        "username": "user86",
+        "create_time": 1670641758,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1354,
+        "role_name": "超级管理员",
+        "username": "user87",
+        "create_time": 1670641758,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1355,
+        "role_name": "超级管理员",
+        "username": "user88",
+        "create_time": 1670641758,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1356,
+        "role_name": "超级管理员",
+        "username": "user89",
+        "create_time": 1670641758,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1357,
+        "role_name": "超级管理员",
+        "username": "user90",
+        "create_time": 1670641759,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1358,
+        "role_name": "超级管理员",
+        "username": "user91",
+        "create_time": 1670641759,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1359,
+        "role_name": "超级管理员",
+        "username": "user92",
+        "create_time": 1670641759,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1360,
+        "role_name": "超级管理员",
+        "username": "user93",
+        "create_time": 1670641759,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1361,
+        "role_name": "超级管理员",
+        "username": "user94",
+        "create_time": 1670641759,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1362,
+        "role_name": "超级管理员",
+        "username": "user95",
+        "create_time": 1670641760,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1363,
+        "role_name": "超级管理员",
+        "username": "user96",
+        "create_time": 1670641760,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1364,
+        "role_name": "超级管理员",
+        "username": "user97",
+        "create_time": 1670641760,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      },
+      {
+        "id": 1365,
+        "role_name": "超级管理员",
+        "username": "user98",
+        "create_time": 1670641760,
+        "mobile": "13909090909",
+        "email": "11A隐藏富豪@qq.com",
+        "mg_state": false
+      }
+    ]
+  },
+  "meta": { "msg": "获取管理员列表成功", "status": 200 }
+}

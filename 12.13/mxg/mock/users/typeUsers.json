@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": 500,
+    "rid": 0,
+    "username": "admin",
+    "mobile": "199",
+    "email": "202957@qq.com",
+    "mg_state": 1
+  },
+  "meta": { "msg": "设置状态成功", "status": 200 }
+}

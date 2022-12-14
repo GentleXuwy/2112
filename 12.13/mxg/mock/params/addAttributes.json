@@ -1,0 +1,12 @@
+{
+  "data": {
+    "attr_id": 4148,
+    "attr_name": "是的方法",
+    "cat_id": "1850",
+    "attr_sel": "many",
+    "attr_write": "list",
+    "attr_vals": "",
+    "delete_time": null
+  },
+  "meta": { "msg": "创建成功", "status": 201 }
+}

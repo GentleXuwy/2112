@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": 2330,
+    "username": "324",
+    "mobile": "13213764656",
+    "email": "123231@qq.com",
+    "role_id": -1,
+    "create_time": 1670832582
+  },
+  "meta": { "msg": "创建成功", "status": 201 }
+}
