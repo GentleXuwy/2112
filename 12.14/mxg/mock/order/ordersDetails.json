@@ -1,0 +1,40 @@
+{
+	"data": {
+			"order_id": 67,
+			"user_id": 1,
+			"order_number": "itcast-g7kmck71vjaujfgoi",
+			"order_price": 20,
+			"order_pay": "0",
+			"is_send": "否",
+			"trade_no": "",
+			"order_fapiao_title": "个人",
+			"order_fapiao_company": "",
+			"order_fapiao_content": "",
+			"consignee_addr": "",
+			"pay_status": "0",
+			"create_time": 1512533560,
+			"update_time": 1512533560,
+			"goods": [
+					{
+							"id": 82,
+							"order_id": 67,
+							"goods_id": 96,
+							"goods_price": 333,
+							"goods_number": 2,
+							"goods_total_price": 999
+					},
+					{
+							"id": 83,
+							"order_id": 67,
+							"goods_id": 95,
+							"goods_price": 666,
+							"goods_number": 5,
+							"goods_total_price": 999
+					}
+			]
+	},
+	"meta": {
+			"msg": "获取成功",
+			"status": 200
+	}
+}

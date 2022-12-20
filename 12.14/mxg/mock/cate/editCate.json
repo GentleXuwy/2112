@@ -1,0 +1,10 @@
+{
+  "data": {
+    "cat_id": 1835,
+    "cat_name": "234水电费",
+    "cat_pid": 0,
+    "cat_level": 0,
+    "cat_deleted": false
+  },
+  "meta": { "msg": "更新成功", "status": 200 }
+}

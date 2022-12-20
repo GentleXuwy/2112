@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": 592,
+      "roleName": "12",
+      "roleDesc": "哈哈哈哈哈哈",
+      "children": [
+        {
+          "id": 103,
+          "authName": "权限管理",
+          "path": "rights",
+          "children": [
+            {
+              "id": 111,
+              "authName": "角色列表",
+              "path": "roles",
+              "children": [
+                { "id": 129, "authName": "添加角色", "path": "roles" },
+                { "id": 130, "authName": "删除角色", "path": "roles" },
+                { "id": 134, "authName": "角色授权", "path": "roles" },
+                { "id": 135, "authName": "取消角色授权", "path": "roles" },
+                { "id": 138, "authName": "获取角色列表", "path": "roles" },
+                { "id": 139, "authName": "获取角色详情", "path": "roles" },
+                { "id": 140, "authName": "更新角色信息", "path": "roles" },
+                { "id": 141, "authName": "更新角色权限", "path": "roles" }
+              ]
+            },
+            {
+              "id": 112,
+              "authName": "权限列表",
+              "path": "rights",
+              "children": [
+                { "id": 147, "authName": "查看权限", "path": "rights" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    { "id": 598, "roleName": "haihhai", "roleDesc": "1111", "children": [] },
+    { "id": 599, "roleName": "asd", "roleDesc": "asd", "children": [] },
+    { "id": 600, "roleName": "asd", "roleDesc": "asd", "children": [] },
+    { "id": 601, "roleName": "sdf", "roleDesc": "gfed", "children": [] },
+    { "id": 602, "roleName": "fgsh", "roleDesc": "fgh", "children": [] },
+    { "id": 603, "roleName": "fgdh", "roleDesc": "ghj", "children": [] },
+    { "id": 604, "roleName": "ghjjhk", "roleDesc": "hjkkjh", "children": [] }
+  ],
+  "meta": { "msg": "获取成功", "status": 200 }
+}

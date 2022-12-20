@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "attr_id": 4144,
+      "attr_name": "dd",
+      "cat_id": 1850,
+      "attr_sel": "many",
+      "attr_write": "list",
+      "attr_vals": "打打 打打 add",
+      "delete_time": null
+    },
+    {
+      "attr_id": 4145,
+      "attr_name": "颜色",
+      "cat_id": 1850,
+      "attr_sel": "many",
+      "attr_write": "list",
+      "attr_vals": "",
+      "delete_time": null
+    }
+  ],
+  "meta": { "msg": "获取成功", "status": 200 }
+}

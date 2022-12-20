@@ -1,0 +1,10 @@
+{
+  "data": {
+    "cat_id": 2053,
+    "cat_name": "盖饭",
+    "cat_pid": 1862,
+    "cat_level": 2,
+    "cat_deleted": false
+  },
+  "meta": { "msg": "创建成功", "status": 201 }
+}
