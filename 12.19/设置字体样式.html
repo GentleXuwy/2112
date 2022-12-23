@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="c" width="300" height="300" style="border: 1px solid #ccc;"></canvas>
+
+    <script>
+        const cnv = document.getElementById('c')
+        const cxt = cnv.getContext('2d')
+
+        cxt.font = '60px Arial'//将字号设置成60px 
+
+        cxt.strokeText('类侯', 30,90)
+    </script>
+</body>
+</html>

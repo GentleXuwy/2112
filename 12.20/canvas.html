@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <canvas id="a" width="500" height="500" style="border: 1px solid #666;"></canvas>
+</body>
+<script>
+    const cnv =document.getElementById('a')
+    const cxt = cnv.getContext('2d')
+    // 创建image 对象
+    const image =new Image()
+    // 引入图片
+    image.src='./src/1.png'
+    // 等待图片加载完成
+    image.onload=()=>{
+        cxt.drawImage(image,30,30)
+    }
+</script>
+</html>

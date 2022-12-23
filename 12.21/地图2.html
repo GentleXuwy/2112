@@ -1,282 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>地图2</title>
-	</head>
-	<body>
-		<div
-			id="main"
-			style="width: 100%; height: 100vh"
-		></div>
-	</body>
-	<script src="./lib/echarts.min.js"></script>
-	<script src="./js/china.js"></script>
-	<script>
-		var myCharts = echarts.init(document.getElementById('main'));
 
-		var outname = [
-			'南海诸岛',
-			'北京',
-			'天津',
-			'上海',
-			'重庆',
-			'河北',
-			'河南',
-			'云南',
-			'辽宁',
-			'黑龙江',
-			'湖南',
-			'安徽',
-			'山东',
-			'新疆',
-			'江苏',
-			'浙江',
-			'江西',
-			'湖北',
-			'广西',
-			'甘肃',
-			'山西',
-			'内蒙古',
-			'陕西',
-			'吉林',
-			'福建',
-			'贵州',
-			'广东',
-			'青海',
-			'西藏',
-			'四川',
-			'宁夏',
-			'海南',
-			'台湾',
-			'香港',
-			'澳门',
-		];
-		var outvalue = [
-			0, 524, 13, 140, 75, 13, 83, 11, 19, 15, 69, 260, 39, 4, 31, 104, 36,
-			1052, 33, 347, 9, 157, 22, 4, 18, 5, 2398, 41, 0, 484, 404, 22, 3, 5, 225,
-		];
-		var outdata = [];
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>地图2</title>
+</head>
 
-		var max = 6000,
-			min = 10;
-		var maxSize4Pin = 100,
-			minSize4Pin = 20;
+<body>
+	<div id="main" style="width: 100%; height: 100vh"></div>
+</body>
+<script src="./lib/echarts.min.js"></script>
+<script src="./js/china.js"></script>
+<script>
+	var myChart = echarts.init(document.getElementById('main'));
 
-		for (var i = 0; i < outname.length; i++) {
-			outdata.push({
-				name: outname[i],
-				value: outvalue[i],
-			});
-		}
+	// option = {
+	// 	series: [
+	// 		{
+	// 			type: 'map',
+	// 			map: 'china',
+	// 		},
+	// 	],
+	// };
 
-		var geoCoordMap = {};
-		/*获取地图数据*/
-		var mapFeatures = echarts.getMap('china').geoJson.features;
-		//  console.log(mapFeatures)
-		mapFeatures.forEach(function (v) {
-			console.info(v);
-			// 地区名称
-			var name = v.properties.name;
-			// 地区经纬度
-			geoCoordMap[name] = v.properties.cp;
-		});
-		var convertData = function (outdata) {
-			var res = [];
-			for (var i = 0; i < outdata.length; i++) {
-				var geoCoord = geoCoordMap[outdata[i].name];
-				if (geoCoord) {
-					res.push({
-						name: outdata[i].name,
-						value: geoCoord.concat(outdata[i].value),
-					});
-				}
+	// myCharts.setOption(option);
+
+
+	//各省份的地图json文件
+	var provinces = {
+		'上海': '/asset/get/s/data-1482909900836-H1BC_1WHg.json',
+		'河北': '/asset/get/s/data-1482909799572-Hkgu_yWSg.json',
+		'山西': '/asset/get/s/data-1482909909703-SyCA_JbSg.json',
+		'内蒙古': '/asset/get/s/data-1482909841923-rkqqdyZSe.json',
+		'辽宁': '/asset/get/s/data-1482909836074-rJV9O1-Hg.json',
+		'吉林': '/asset/get/s/data-1482909832739-rJ-cdy-Hx.json',
+		'黑龙江': '/asset/get/s/data-1482909803892-Hy4__J-Sx.json',
+		'江苏': '/asset/get/s/data-1482909823260-HkDtOJZBx.json',
+		'浙江': '/asset/get/s/data-1482909960637-rkZMYkZBx.json',
+		'安徽': '/asset/get/s/data-1482909768458-HJlU_yWBe.json',
+		'福建': '/asset/get/s/data-1478782908884-B1H6yezWe.json',
+		'江西': '/asset/get/s/data-1482909827542-r12YOJWHe.json',
+		'山东': '/asset/get/s/data-1482909892121-BJ3auk-Se.json',
+		'河南': '/asset/get/s/data-1482909807135-SJPudkWre.json',
+		'湖北': '/asset/get/s/data-1482909813213-Hy6u_kbrl.json',
+		'湖南': '/asset/get/s/data-1482909818685-H17FOkZSl.json',
+		'广东': '/asset/get/s/data-1482909784051-BJgwuy-Sl.json',
+		'广西': '/asset/get/s/data-1482909787648-SyEPuJbSg.json',
+		'海南': '/asset/get/s/data-1482909796480-H12P_J-Bg.json',
+		'四川': '/asset/get/s/data-1482909931094-H17eKk-rg.json',
+		'贵州': '/asset/get/s/data-1482909791334-Bkwvd1bBe.json',
+		'云南': '/asset/get/s/data-1482909957601-HkA-FyWSx.json',
+		'西藏': '/asset/get/s/data-1482927407942-SkOV6Qbrl.json',
+		'陕西': '/asset/get/s/data-1482909918961-BJw1FyZHg.json',
+		'甘肃': '/asset/get/s/data-1482909780863-r1aIdyWHl.json',
+		'青海': '/asset/get/s/data-1482909853618-B1IiOyZSl.json',
+		'宁夏': '/asset/get/s/data-1482909848690-HJWiuy-Bg.json',
+		'新疆': '/asset/get/s/data-1482909952731-B1YZKkbBx.json',
+		'北京': '/asset/get/s/data-1482818963027-Hko9SKJrg.json',
+		'天津': '/asset/get/s/data-1482909944620-r1-WKyWHg.json',
+		'重庆': '/asset/get/s/data-1482909775470-HJDIdk-Se.json',
+		'香港': '/asset/get/s/data-1461584707906-r1hSmtsx.json',
+		'澳门': '/asset/get/s/data-1482909771696-ByVIdJWBx.json'
+	};
+
+	//各省份的数据
+	var allData = [{
+		name: '北京'
+	}, {
+		name: '天津'
+	}, {
+		name: '上海'
+	}, {
+		name: '重庆'
+	}, {
+		name: '河北'
+	}, {
+		name: '河南'
+	}, {
+		name: '云南'
+	}, {
+		name: '辽宁'
+	}, {
+		name: '黑龙江'
+	}, {
+		name: '湖南'
+	}, {
+		name: '安徽'
+	}, {
+		name: '山东'
+	}, {
+		name: '新疆'
+	}, {
+		name: '江苏'
+	}, {
+		name: '浙江'
+	}, {
+		name: '江西'
+	}, {
+		name: '湖北'
+	}, {
+		name: '广西'
+	}, {
+		name: '甘肃'
+	}, {
+		name: '山西'
+	}, {
+		name: '内蒙古'
+	}, {
+		name: '陕西'
+	}, {
+		name: '吉林'
+	}, {
+		name: '福建'
+	}, {
+		name: '贵州'
+	}, {
+		name: '广东'
+	}, {
+		name: '青海'
+	}, {
+		name: '西藏'
+	}, {
+		name: '四川'
+	}, {
+		name: '宁夏'
+	}, {
+		name: '海南'
+	}, {
+		name: '台湾'
+	}, {
+		name: '香港'
+	}, {
+		name: '澳门'
+	}];
+	for (var i = 0; i < allData.length; i++) {
+		allData[i].value = Math.round(Math.random() * 100);
+	}
+
+
+	loadMap('./1.json', 'china');//初始化全国地图
+
+	var timeFn = null;
+
+	//单击切换到省级地图，当mapCode有值,说明可以切换到下级地图
+	myChart.on('click', function (params) {
+		clearTimeout(timeFn);
+		//由于单击事件和双击事件冲突，故单击的响应事件延迟250毫秒执行
+		timeFn = setTimeout(function () {
+			var name = params.name; //地区name
+			var mapCode = provinces[name]; //地区的json数据
+			if (!mapCode) {
+				alert('无此区域地图显示');
+				return;
 			}
-			return res;
-		};
 
-		option = {
-			backgroundColor: '#0F1C3C',
-			tooltip: {
-				show: true,
-				formatter: function (params) {
-					if (params.value.length > 1) {
-						return (
-							'&nbsp;&nbsp;' +
-							params.name +
-							'&nbsp;&nbsp;&nbsp;' +
-							params.value[2] +
-							'人&nbsp;&nbsp;'
-						);
-					} else {
-						return (
-							'&nbsp;&nbsp;' +
-							params.name +
-							'&nbsp;&nbsp;&nbsp;' +
-							params.value +
-							'人&nbsp;&nbsp;'
-						);
-					}
-				},
-			},
+			loadMap(mapCode, name);
 
-			geo: {
-				map: 'china',
-				show: true,
-				roam: false,
-				label: {
-					emphasis: {
-						show: false,
-					},
-				},
-				layoutSize: '100%',
-				itemStyle: {
-					normal: {
-						borderColor: new echarts.graphic.LinearGradient(
-							0,
-							0,
-							0,
-							1,
-							[
-								{
-									offset: 0,
-									color: '#00F6FF',
-								},
-								{
-									offset: 1,
-									color: '#53D9FF',
-								},
-							],
-							false,
-						),
-						borderWidth: 3,
-						shadowColor: 'rgba(10,76,139,1)',
-						shadowOffsetY: 0,
-						shadowBlur: 60,
-					},
-				},
-			},
-			series: [
-				{
-					type: 'map',
-					map: 'china',
-					aspectScale: 0.75,
-					//zoom:1.1,
-					label: {
-						normal: {
-							show: false,
-						},
-						emphasis: {
-							show: false,
+		}, 250);
+	});
+
+
+	// 绑定双击事件，返回全国地图
+	myChart.on('dblclick', function (params) {
+		//当双击事件发生时，清除单击事件，仅响应双击事件
+		clearTimeout(timeFn);
+
+		//返回全国地图
+		loadMap('1.json', 'china');
+	});
+
+	/**
+	 获取对应的json地图数据，然后向echarts注册该区域的地图，最后加载地图信息
+	 @params {String} mapCode:json数据的地址
+	 @params {String} name: 地图名称
+	 */
+	function loadMap (mapCode, name) {
+		$.get(mapCode, function (data) {
+			if (data) {
+				echarts.registerMap(name, data);
+				var option = {
+					tooltip: {
+						show: true,
+						formatter: function (params) {
+							if (params.data) return params.name + '：' + params.data['value']
 						},
 					},
-					itemStyle: {
-						normal: {
-							areaColor: {
-								x: 0,
-								y: 0,
-								x2: 0,
-								y2: 1,
-								colorStops: [
-									{
-										offset: 0,
-										color: '#073684', // 0% 处的颜色
-									},
-									{
-										offset: 1,
-										color: '#061E3D', // 100% 处的颜色
-									},
-								],
+					visualMap: {
+						type: 'continuous',
+						text: ['', ''],
+						showLabel: true,
+						left: '50',
+						min: 0,
+						max: 100,
+						inRange: {
+							color: ['#edfbfb', '#b7d6f3', '#40a9ed', '#3598c1', '#215096',]
+						},
+						splitNumber: 0
+					},
+					series: [{
+						name: 'MAP',
+						type: 'map',
+						mapType: name,
+						selectedMode: 'false',//是否允许选中多个区域
+						label: {
+							normal: {
+								show: true
 							},
-							borderColor: '#215495',
-							borderWidth: 1,
+							emphasis: {
+								show: true
+							}
 						},
-						emphasis: {
-							areaColor: {
-								x: 0,
-								y: 0,
-								x2: 0,
-								y2: 1,
-								colorStops: [
-									{
-										offset: 0,
-										color: '#073684', // 0% 处的颜色
-									},
-									{
-										offset: 1,
-										color: '#061E3D', // 100% 处的颜色
-									},
-								],
-							},
-						},
-					},
-					data: outdata,
-				},
-				{
-					type: 'effectScatter',
-					coordinateSystem: 'geo',
-					rippleEffect: {
-						brushType: 'stroke',
-					},
-					showEffectOn: 'render',
-					itemStyle: {
-						normal: {
-							color: {
-								type: 'radial',
-								x: 0.5,
-								y: 0.5,
-								r: 0.5,
-								colorStops: [
-									{
-										offset: 0,
-										color: 'rgba(5,80,151,0.2)',
-									},
-									{
-										offset: 0.8,
-										color: 'rgba(5,80,151,0.8)',
-									},
-									{
-										offset: 1,
-										color: 'rgba(0,108,255,0.7)',
-									},
-								],
-								global: false, // 缺省为 false
-							},
-						},
-					},
-					label: {
-						normal: {
-							show: true,
-							color: '#fff',
-							fontWeight: 'bold',
-							position: 'inside',
-							formatter: function (para) {
-								return '{cnNum|' + para.data.value[2] + '}';
-							},
-							rich: {
-								cnNum: {
-									fontSize: 13,
-									color: '#D4EEFF',
-								},
-							},
-						},
-					},
-					symbol: 'circle',
-					symbolSize: function (val) {
-						if (val[2] === 0) {
-							return 0;
-						}
-						var a = (maxSize4Pin - minSize4Pin) / (max - min);
-						var b = maxSize4Pin - a * max;
-						return a * val[2] + b * 1.2;
-					},
-					data: convertData(outdata),
-					zlevel: 1,
-				},
-			],
-		};
-		myCharts.setOption(option);
-	</script>
+						data: allData
+					}]
+				};
+				myChart.setOption(option);
+				// curMap = {
+				//     mapCode: mapCode,
+				//     mapName: name
+				// };
+			} else {
+				alert('无法加载该地图');
+			}
+		});
+	}
+</script>
+
 </html>

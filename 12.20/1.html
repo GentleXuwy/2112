@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dog{
+     display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- <canvas id="c" width="500" height="500" style="border: 1px solid #ccc"></canvas> -->
+    <!-- <img src="./src/1.png" alt="">
+    <canvas id="c" width="500" height="500" style="border: 1px solid #ccc"></canvas> -->
+    <canvas id="c" width="500" height="500" style="border: 1px solid #ccc"></canvas>
+</body>
+<script>
+//    const cnv=document.getElementById('c')
+//    const cxt =cnv.getContext('2d')
+//    // 创建Image 对象
+//    const image=new Image()
+// //   引入图片
+//    image.src='./src/1.png'
+// // 等待图片加载完成
+//    image.onload=()=>{
+//     // 使用 drawImage() 方法渲染图片
+//     cxt.drawImage(image,30,30)
+//    }
+
+// const cnv=document.getElementById('c')
+// const cxt =cnv.getContext('2d')
+// const image=document.getElementById(dog)
+// cxt.drawImage(image,70,70)
+
+
+
+// const cnv=document.getElementById('c')
+// const cxt =cnv.getContext('2d')
+
+// const image=new Image()
+//    image.src='./src/1.png'
+//    image.onload=()=>{
+//     cxt.drawImage(image,30,30,100,100)
+//    }
+
+
+const cnv=document.getElementById('c')
+const cxt =cnv.getContext('2d')
+
+const image=new Image()
+   image.src='./src/1.png'
+   image.onload=()=>{
+    cxt.drawImage(image,30,30,100,100,20,10,10,5)
+   }
+
+</script>
+</html>
