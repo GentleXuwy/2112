@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body></body>
+</html>
+<script>
+	//  使用{}创建对象，等同于 new Object();
+	// var a = {};
+	//     a.name = '张三';
+	//     a.age = 20;
+
+	//     a.getName = function(){
+	//         alert(this.name);
+	//     }
+
+	//     alert(a.name+'-'+a.age);
+
+	//     a.getName();
+	//-----------------------------------------
+
+	// 使用 new Object() 创建对象
+	// var a = new Object();
+	// a.name = "老六";
+	// a.getName = function(){
+	//     alert(this.name);
+	// }
+
+	// a.getName();
+
+    //检测构造函数prototype是否出现这个实例
+	// alert((a instanceof Object));  //true  
+    //  检测数据类型
+	// alert(typeof a);   //object 
+
+	//-----------------------------------------
+
+	// 使用字面量创建对象
+	// 对象字面变量是对象定义的一种简写形式
+	// 这就是字面量形式
+	//     var person = {name: '张三', age:20}
+	// // 完全等价于
+	//     var person = {}
+	//     person.name='张三'
+	//     person.age=20
+
+	//-----------------------------------------
+
+	// 使用工厂模式创建对象
+	// 定义一个工厂方法
+	// function createObject(name){
+	//     var a = new Object();
+	//     a.name = name;
+	//     a.sayName = function(){
+	//         alert(this.name);
+	//     };
+	//     return a;
+	// }
+	// var a1 = createObject('zhang');
+	// var a2 = createObject('li');
+	// alert(a1.sayName===a2.sayName);//false
+	//-----------------------------------------
+
+	// 构造函数模式创建对象
+	// 构造函数的名称首字母大写
+	function Person(name) {
+		this.name = name;
+		this.sayName = function () {
+			alert(this.name);
+			console.log(this.name);
+		};
+	}
+	var p1 = new Person('张三');
+	var p2 = new Person('王五');
+	p1.sayName();
+	p2.sayName();
+
+	console.log(p1.constructor === p2.constructor); //true
+	console.log(p1.constructor === Person); //true
+	console.log(p1 instanceof Object); //true
+	console.log(p2 instanceof Object); //trueb
+</script>
