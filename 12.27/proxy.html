@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    //先写一个普通对象
+    var xx ={
+        name:'张三',
+        age:18
+    }
+    console.log(xx.name);
+
+    // proxy拦截行为
+    let _handler={
+        //get用于拦截某个属性的读取操作
+        get:function(target,_p){   //有三个参数分别是目标对象，属性名，proxy实例本身
+            if(target.name==='张三'){
+                return '张三他哥是老六'
+            }
+        },
+        // set用来拦截某个属性赋值操作，有四个参数
+        // 分别是目标对象，属性名，属性值和proxy实例本身，最后一个可选，一般写三个
+        set:function(_obj,_prop,_val){  
+            if(_prop==='age'){
+                _obj[_prop]='20'
+            }
+        }
+    }
+
+    //创建proxy 对象
+    let proxyObj =new Proxy(xx,_handler)
+
+    console.log(proxyObj.name);
+
+
+    proxyObj.age=123
+    console.log(proxyObj);
+</script>
